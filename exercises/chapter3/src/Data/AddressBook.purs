@@ -38,3 +38,16 @@ findEntry firstName lastName = head <<< filter filterEntry
   filterEntry :: Entry -> Boolean
   filterEntry entry = entry.firstName == firstName && entry.lastName == lastName
 
+findEntryByStreet :: String->AddressBook->Maybe Entry
+-- exercise 2
+-- findEntryByStreet streetName = head <<< filter filterEntry
+--   where
+--   filterEntry :: Entry -> Boolean
+--   filterEntry entry = entry.address.street == streetName
+
+-- exercise 3
+  findEntryByStreet' streetName = head <<< filter (_.address.street >>> eq streetName)
+
+
+
+
